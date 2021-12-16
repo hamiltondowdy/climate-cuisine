@@ -25,3 +25,12 @@ fetch(apiUrl).then(function(response){
     alert("Unable to connect to the server")
 });
 };
+//get weather information on the website 
+var getWeather = function(data){
+    //define variables for the weather data
+    var {name} = data;
+    var {icon,description}=data.weather[0];
+    var {temp,humidity}=data.main;
+console.log (name,icon,temp,humidity,description)
+    //write the weather infromation in each element 
+};
