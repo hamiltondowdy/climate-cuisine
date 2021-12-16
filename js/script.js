@@ -47,11 +47,15 @@ var randomCity =function(){
         (function(i){
             setTimeout(function(){
                 getWaetherInfo(cities[i]);
+                // random images for the HTML background
+                document.body.style.backgroundImage =
+                "url('https://source.unsplash.com/1600x900/?" + cities[i] + "')";
             },5000*(i+1));
            
         })(i);
         i++;
     }
 }
-//callimng the randomCity function 
+
+//callimng the randomCity function
 randomCity();
