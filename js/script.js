@@ -1,5 +1,5 @@
 //Api key 
-var apiKey ="5d1bf1cd99bc77abc1a5d1777f514808";
+var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
 // get weather info function 
 var getWaetherInfo =function (city,data){
 // get weather info function, to test the URl change the (+ city +) with any city name 
@@ -34,3 +34,24 @@ var getWeather = function(data){
 console.log (name,icon,temp,humidity,description)
     //write the weather infromation in each element 
 };
+
+//display random cities on the first HTML page
+var randomCity =function(){
+    //cities array
+    var cities= ["london","tokyo","paris","amsterdam","toronto", "moscow","dubai"];
+    // let the i = 0
+    var i = 0;
+    // check the array length and loop over the array 
+    while(i = cities.length){
+        // set timeouts to dealy the next city 
+        (function(i){
+            setTimeout(function(){
+                getWaetherInfo(cities[i]);
+            },5000*(i+1));
+           
+        })(i);
+        i++;
+    }
+}
+//callimng the randomCity function 
+randomCity();
