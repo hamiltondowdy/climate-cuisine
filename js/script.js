@@ -1,7 +1,7 @@
-var coldMeals = [];
-var coolMeals = [];
-var warmMeals = [];
-var hotMeals = [];
+var coldMeals = [53057, 52803, 52942, 52903, 52788];
+var coolMeals = [53043, 52922, 52851, 52989, 52934];
+var warmMeals = [52944, 53038, 53051, 53062, 52871];
+var hotMeals = [52891, 52957, 52889, 53063, 52939];
 
 var chosenMeal = "52772"
 
