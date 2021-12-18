@@ -104,7 +104,6 @@ var randomCity =function(){
                 // stop the timer
                 clearTimeout(time);
             }
-            // if the search button was clicked stop the time 
             searchBtn.addEventListener("click", stopTime);
         })(i);
     }
