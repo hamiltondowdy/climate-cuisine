@@ -33,7 +33,7 @@ var getDrinkId = function () {
     };
     cocktailApiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + selectedDrink;
     getDrink();
-}
+};
 
 
 var getDrink = function () {
