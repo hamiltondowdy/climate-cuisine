@@ -35,7 +35,7 @@ h1 {
   margin: 6px auto;
 }
 .card {
-  margin: 125px 0 2px 175px;
+  margin: 50px 50px 50px 50px;
   width: 100%;
   border: 3px solid rgb(52, 94, 209, 0.8);
   display: flex;
