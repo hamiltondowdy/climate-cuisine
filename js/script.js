@@ -239,7 +239,7 @@ var randomCity =function(){
         i++;
     }
 }
-
+        
 //callimng the randomCity function
 //var randomCity = function(){
 
