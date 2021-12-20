@@ -189,7 +189,7 @@ console.log (name,icon,temp,humidity,description)
  
     //write the information in each element
     nameEl.innerText = "Weather in " + name;
-    iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+    //iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
     tempEl.innerText = "Temp: "+ temp + "°F";
     humidityEl.innerText = "Humidity "+ humidity; 
     descEl.innerText = description; 
@@ -231,10 +231,10 @@ var randomCity =function(){
                 clearTimeout(time);
             }
             searchBtn.addEventListener("click", stopTime);
-        })(i);
-    }
+        //})(i);
+    //}
     
-}
+//}
 //callimng the randomCity function
 randomCity();
 // if the search button was clicked show the chosen city
