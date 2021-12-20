@@ -40,6 +40,7 @@ h1 {
   width: 100%;
   border: 3px solid rgb(52, 94, 209, 0.8);
   display: flex;
+}
 .appDescription {
   font-size: 30px;
   display: flex;
@@ -201,6 +202,4 @@ p {
  display: flex;
   justify-content: center; 
   padding-left: 10vw;
-} */
-
 } */
