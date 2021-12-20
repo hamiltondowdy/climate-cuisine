@@ -1,5 +1,5 @@
 
-/*Api key 
+//Api key 
 var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
 // get weather info function 
 var getWaetherInfo =function (city,data){
@@ -200,4 +200,5 @@ var randomCity =function(){
 // if the search button was clicked show the chosen city
 //searchBtn.addEventListener("click", getCity);
 
-        
+    
+    
