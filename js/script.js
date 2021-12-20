@@ -56,15 +56,6 @@ var getDrink = function () {
     });
 };
 
-
-
-
-//Api key 
-var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
-// get weather info function 
-var getWaetherInfo =function (city,data){
-
-
 // Array of meal IDs for MealDB API
 var coldMeals = [53057, 52803, 52942, 52903, 52788];
 var coolMeals = [53043, 52922, 52851, 52989, 52934];
@@ -170,10 +161,6 @@ fetch(apiUrl).then(function(response){
     if (response.ok){
         //get the data 
         response.json().then(function(data){
-
-           
-            console,log(data,city);
-
                // run dsiplay weathr function 
                getWeather(data,city);
         });
@@ -210,55 +197,34 @@ console.log (name,icon,temp,humidity,description)
 };
 
 //display random cities on the first HTML page
+//display random cities on the first HTML page
 var randomCity =function(){
     //cities array
     var cities= ["london","tokyo","paris","amsterdam","toronto", "moscow","dubai"];
-
-    // let the i = 0
-    var i = 0;
-    // check the array length and loop over the array 
-    while(i = cities.length){
-        // set timeouts to dealy the next city 
-        (function(i){
-            setTimeout(function(){
-
     // check the array length and loop over the array 
     for( var i = 0;i < cities.length ; i++){
         // set timeouts to dealy the next city 
         (function(i){
             var time =setTimeout(function(){
-
                 getWaetherInfo(cities[i]);
                 // random images for the HTML background
                 document.body.style.backgroundImage =
                 "url('https://source.unsplash.com/1600x900/?" + cities[i] + "')";
-
-            },5000*(i+1));
-           
-        })(i);
-        i++;
-    }
-}
-
-//callimng the randomCity function
-//var randomCity = function(){
-
-            //},5000*(i));
+            },5000*(i));
             // function to stop the timer 
-            //var stopTime = function (){
+            var stopTime = function (){
                 // stop the timer
-                //clearTimeout(time);
-            //}
-            //searchBtn.addEventListener("click", stopTime);
-        //})(i);
-    ////}
+                clearTimeout(time);
+            }
+            searchBtn.addEventListener("click", stopTime);
+        })(i);
+    }
     
-//}
-
+}
 //callimng the randomCity function
-//randomCity();
+randomCity();
 // if the search button was clicked show the chosen city
-//searchBtn.addEventListener("click", getCity);
+searchBtn.addEventListener("click", getCity);
 
     
     
