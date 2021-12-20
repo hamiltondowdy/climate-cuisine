@@ -24,7 +24,7 @@ var getMealId = function() {
     } else if (chosenCityTemp > 60 && chosenCityTemp <= 80) {
         chosenMeal = warmMeals[Math.floor(Math.random() * (warmMeals.length-1))];
     } else if (chosenCityTemp > 80) {
-        chosenMeal = warmMeals[Math.floor(Math.random() * (hotMeals.length-1))];
+        chosenMeal = hotMeals[Math.floor(Math.random() * (hotMeals.length-1))];
     } else {
         console.log("error on meal choice")
     };
