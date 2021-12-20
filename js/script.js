@@ -182,7 +182,7 @@ var getWeather = function(data){
     var {name} = data;
     var {icon,description}=data.weather[0];
     var {temp,humidity}=data.main;
-console.log (name,icon,temp,humidity,description)
+    console.log (name,icon,temp,humidity,description)
 
     //write the weather infromation in each element 
 
@@ -191,7 +191,7 @@ console.log (name,icon,temp,humidity,description)
     nameEl.innerText = "Weather in " + name;
     iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
     tempEl.innerText = "Temp: "+ temp + "°F";
-    humidityEl.innerText = "Humidity "+ humidity; 
+    humidityEl.innerText = "Humidity: "+ humidity; 
     descEl.innerText = description; 
 
 };
