@@ -17,6 +17,7 @@ body {
     rgb(39, 39, 122) 50%
   );
   height: 100px;
+  height: 150px;
   position: sticky;
   top: 0;
   border: 0.2px solid rgb(52, 94, 209);
@@ -39,7 +40,21 @@ h1 {
   width: 100%;
   border: 3px solid rgb(52, 94, 209, 0.8);
   display: flex;
-  
+.appDescription {
+  font-size: 30px;
+  display: flex;
+  font-stretch: extra-expanded;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 10px;
+  text-shadow: 2px 2px green;
+  justify-content: center;
+}
+.card {
+  margin: 125px 0 2px 175px;
+  width: 100%;
+  border: 3px solid rgb(52, 94, 209, 0.8);
+  display: flex;
 }
 .card-header {
   background-color: rgba(61, 61, 168, 0.8);
@@ -99,6 +114,14 @@ h1 {
   background-color: rgb(14, 109, 233);
   border-radius: 2rem;
 }*/
+.card2 {
+  display: flex;
+  border: 3px solid rgba(52, 94, 209, 0.8);
+  width: 100%;
+  margin: 125px 0 0 460px;
+  background-color: rgba(14, 109, 233, 0.8);
+  border-radius: 2rem;
+}
 .city-name {
   color: #ffff;
   font-size: 32px;
@@ -115,9 +138,69 @@ p {
   color: #ffff;
   font-size: 18px;
 }
+@media only screen and (max-width: 768px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    height: 200px;
+    position: sticky;
+    top: 0;
+    border: 0.2px solid rgb(52, 94, 209);
+  }
+  .card {
+    margin: 0px 0 0px 0px;
+    width: 100%;
+    border: 3px solid rgb(52, 94, 209, 0.8);
+    display: flex;
+  }
+  .card2 {
+    display: flex;
+    border: 3px solid rgba(52, 94, 209, 0.8);
+    width: 100%;
+    margin: 0px 0 0 0px;
+    background-color: rgba(14, 109, 233, 0.8);
+    border-radius: 2rem;
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    height: 350px;
+    position: sticky;
+    top: 0;
+    border: 0.2px solid rgb(52, 94, 209);
+  }
+  .card {
+    margin: 0px 0 0px 0px;
+    width: 100%;
+    border: 3px solid rgb(52, 94, 209, 0.8);
+    display: flex;
+  }
+  .card2 {
+    display: flex;
+    border: 3px solid rgba(52, 94, 209, 0.8);
+    width: 100%;
+    margin: 0px 0 0 0px;
+    background-color: rgba(14, 109, 233, 0.8);
+    border-radius: 2rem;
+  }
+}
 /* main {
  display: flex;
   justify-content: center; 
   padding-left: 10vw;
+} */
+
 } */
