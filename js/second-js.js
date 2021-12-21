@@ -6,17 +6,17 @@ var historyContainer = document.getElementById("city-history");
     // Function to get search history from local storage
     var intialSearch = function(){
         var storedHistory = JSON.parse(window.localStorage.getItem("search-history")) || [];
-        //sort the search 
-        storedHistory.sort(function(a,b){
-            return b.storedHistory - a.storedHistory
-        })
-        for (var i =0; i<storedHistory.length;i++){
+        for (var i = storedHistory.length -1 ;i>=0;i--){
             var liItems=document.createElement("li");
-            liItems.textContent=storedHistory[i];
+            var items=document.createElement("a");
+            liItems.append(items);
+            items.textContent=storedHistory[i];
             console.log(storedHistory);
             historyContainer.append(liItems);
+    
+    
+    
         }
-        
     }
     console.log("my city", city)
     intialSearch(); 
@@ -158,7 +158,7 @@ var getWaetherInfo = function () {
     var {name} = data;
     var {icon,description}=data.weather[0];
     var {temp,humidity}=data.main;
-    chosenCityTemp=temp.data.main;
+    chosenCityTemp=data.main.temp;
     console.log (name,icon,chosenCityTemp,humidity,description);
     //write the weather infromation in each element 
     nameEl.innerText = "Weather in " + name;
@@ -167,4 +167,5 @@ var getWaetherInfo = function () {
     humidityEl.innerText = "Humidity: "+ humidity; 
     descEl.innerText = description; 
 }
+
 getWaetherInfo();
