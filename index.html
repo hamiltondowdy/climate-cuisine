@@ -31,9 +31,10 @@
                 <h2 class="card-header">search for a city:</h2>
                 <form id="city-form" class="card-body">
                     <lable class="form-lable" for="cityname">City Name</lable>
-                    <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input"/>
+                    <input name="cityname" id="cityname" type="text" autofocus="true" aria-controls="today-forecast" class="form-input"/>
                     <button type="submit" class="btn" id="searchBTn" >Search</button>
                 </form>
+                <div id="city-history"></div>
             </div>
         </div>
         <div class ="cell medium-6 large-4 ">

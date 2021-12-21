@@ -1,3 +1,38 @@
+var cityHistory=[];
+var chosenCityTemp;
+//Api key 
+var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
+// Dom Elmenet refrence
+//1- get the result div ID
+var resultEl = document.getElementById("result");
+//2- 1- get the weather forecast div ID from the second page 
+var weatherForecast = document.getElementById("weather-forecast");
+//3- get the form ID
+var cityFormEl=document.getElementById("city-form");
+//4- get the input field of the form section 
+var cityInputEl=document.getElementById("cityname");
+//5- get the search button by ID
+var searchBtn =document.getElementById("searchBTn");
+//6- create a history container 
+var historyContainer =  document.getElementById("city-history");
+// creating Element dynamically for weather information 
+//1- create an <h3> element to hold the city name
+var nameEl =document.createElement("a")
+// give the <h3> element a style 
+nameEl.setAttribute("class","city-name");
+nameEl.setAttribute("href", "./second-page.html")
+//2- create an <img> element to hold the weather icon
+var iconEl =document.createElement("img");
+// assign an SRC attribute to hold the icon URL
+iconEl.setAttribute("src","");
+//1- create an <p> elements to hold the weather information 
+var tempEl= document.createElement("p");
+var humidityEl= document.createElement("p");
+var windEl= document.createElement("p");
+var descEl= document.createElement("p");
+// appending the dynamically created element
+resultEl.append(nameEl,iconEl,tempEl,humidityEl,windEl, descEl);
+
 
 // Array of drink IDs
 var coldDrinks = [11634, 17267, 178358, 13936];
@@ -11,12 +46,6 @@ var selectedDrink = "";
 
 // Static URL variable cocktail DB
 var cocktailApiUrl = "";
-
-
-// Temperature basis input
-var chosenCityTemp = 30;
-
-
 
 // Function to select drink based on temp
 var getDrinkId = function () {
@@ -69,7 +98,7 @@ var chosenMeal = ""
 var mealApiUrl = "";
 
 // Temperature in city input by user
-var chosenCityTemp = 30;
+// var chosenCityTemp = 30;
 
 // function to select random meal ID and run fetch to MealDB API
 var getMealId = function() {
@@ -103,35 +132,17 @@ var getMeal = function() {
             };
         });
 };
+     // Function to update history in local storage then updates displayed history.
+     function appendToHistory(city) {
+        // If there is no search term return the function
+        if (cityHistory.indexOf(city) !== -1) {
+        return;
+      }
+      cityHistory.push(city);
+   
+     localStorage.setItem('search-history',JSON.stringify(cityHistory));
+   }
 
-// Dom Elmenet refrence
-//1- get the result div ID
-var resultEl = document.getElementById("result");
-//2- get the form ID
-var cityFormEl=document.getElementById("city-form");
-//3- get the input field of the form section 
-var cityInputEl=document.getElementById("cityname");
-//4- get the search button by ID
-var searchBtn =document.getElementById("searchBTn");
-// creating Element dynamically for weather information 
-//1- create an <h3> element to hold the city name
-var nameEl =document.createElement("h3")
-// give the <h3> element a style 
-nameEl.setAttribute("class","city-name");
-//2- create an <img> element to hold the weather icon
-var iconEl =document.createElement("img");
-// assign an SRC attribute to hold the icon URL
-iconEl.setAttribute("src","");
-//1- create an <p> elements to hold the weather information 
-var tempEl= document.createElement("p");
-var humidityEl= document.createElement("p");
-var windEl= document.createElement("p");
-var descEl= document.createElement("p");
-// appending the dynamically created element
-resultEl.append(nameEl,iconEl,tempEl,humidityEl,windEl, descEl);
-
-//Api key 
-var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
  // function to get the city name w
  var getCity =function(event){
     // prevent the browser from performing thr default action 
@@ -162,6 +173,7 @@ fetch(apiUrl).then(function(response){
         //get the data 
         response.json().then(function(data){
                // run dsiplay weathr function 
+               appendToHistory(city);
                getWeather(data,city);
         });
         // if the city name was wrong 
@@ -182,7 +194,8 @@ var getWeather = function(data){
     var {name} = data;
     var {icon,description}=data.weather[0];
     var {temp,humidity}=data.main;
-    console.log (name,icon,temp,humidity,description)
+    console.log (name,icon,temp,humidity,description);
+    chosenCityTemp += data.main.temp;
 
     //write the weather infromation in each element 
 
@@ -196,7 +209,7 @@ var getWeather = function(data){
 
 };
 
-//display random cities on the first HTML page
+
 //display random cities on the first HTML page
 var randomCity =function(){
     //cities array
@@ -221,11 +234,11 @@ var randomCity =function(){
     }
     
 }
-//callimng the randomCity function
 randomCity();
+//callimng the randomCity function
 // if the search button was clicked show the chosen city
 searchBtn.addEventListener("click", getCity);
-
+searchBtn.addEventListener("click",document)
     
     
 
