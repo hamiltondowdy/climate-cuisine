@@ -1,5 +1,8 @@
+var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
 var chosenCityTemp;
+var city = JSON.parse(window.localStorage.getItem("cityValue"));
 var historyContainer = document.getElementById("city-history");
+
     // Function to get search history from local storage
     var intialSearch = function(){
         var storedHistory = JSON.parse(window.localStorage.getItem("search-history")) || [];
@@ -10,14 +13,13 @@ var historyContainer = document.getElementById("city-history");
         for (var i =0; i<storedHistory.length;i++){
             var liItems=document.createElement("li");
             liItems.textContent=storedHistory[i];
-
+            console.log(storedHistory);
             historyContainer.append(liItems);
-
-      
         }
+        
     }
+    console.log("my city", city)
     intialSearch(); 
-
 // Array of drink IDs
 var coldDrinks = [11634, 17267, 178358, 13936];
 var coolDrinks = [14282, 16987, 17239, 17255];
@@ -109,3 +111,60 @@ var getMeal = function () {
     }
   });
 };
+//get the name span by ID
+var nameEl =document.getElementById("city-name")
+var iconEl = document.createElement("img");
+// assign an SRC attribute to hold the icon URL
+iconEl.setAttribute("src","");
+//create an <p> elements to hold the weather information 
+var tempEl= document.createElement("p");
+var humidityEl= document.createElement("p");
+var windEl= document.createElement("p");
+var descEl= document.createElement("p");
+// appending the dynamically created element
+// get weather info function
+var getWaetherInfo = function () {
+    // get weather info function, to test the URl change the (+ city +) with any city name
+    var apiUrl =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      city +
+      "&units=imperial&appid=" +
+      apiKey;
+    //make a request to the url
+    fetch(apiUrl)
+      .then(function (response) {
+        // if the response is okay
+        if (response.ok) {
+          //get the data
+          response.json().then(function (data) {
+            // run dsiplay weathr function
+            getWeather(data);
+          });
+          // if the city name was wrong
+        } else {
+          // alert the user // must change to a popup message element
+          alert("error City not found");
+        }
+      })
+      // if there is any network error
+      .catch(function (error) {
+        //alert the user // must change to a popup message element
+        alert("Unable to connect to the server");
+      });
+  };
+  //get weather information on the website 
+  var getWeather = function(data){
+    //define variables for the weather data
+    var {name} = data;
+    var {icon,description}=data.weather[0];
+    var {temp,humidity}=data.main;
+    chosenCityTemp=temp.data.main;
+    console.log (name,icon,chosenCityTemp,humidity,description);
+    //write the weather infromation in each element 
+    nameEl.innerText = "Weather in " + name;
+    iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+    tempEl.innerText = "Temp: "+ chosenCityTemp + "°F";
+    humidityEl.innerText = "Humidity: "+ humidity; 
+    descEl.innerText = description; 
+}
+getWaetherInfo();
