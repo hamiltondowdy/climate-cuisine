@@ -18,7 +18,7 @@ var historyContainer = document.getElementById("city-history");
     }
     intialSearch(); 
 
-    // Array of drink IDs
+// Array of drink IDs
 var coldDrinks = [11634, 17267, 178358, 13936];
 var coolDrinks = [14282, 16987, 17239, 17255];
 var warmDrinks = [15933, 11326, 178334, 12560];
@@ -78,9 +78,6 @@ var chosenMeal = "";
 
 // static variable MealDB API URL
 var mealApiUrl = "";
-
-// Temperature in city input by user
-// var chosenCityTemp = 30;
 
 // function to select random meal ID and run fetch to MealDB API
 var getMealId = function () {
