@@ -16,7 +16,7 @@ body {
     rgba(61, 61, 168, 0.9) 42%,
     rgba(39, 39, 122, 0.9) 50%
   );
-
+  height: 100px;
   height: 150px;
   position: sticky;
   top: 0;
@@ -143,7 +143,7 @@ p {
   color: white;
   font-size: 18px;
 }
-/*@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .nav {
     background-color: rgb(2, 2, 116);
     background-image: linear-gradient(
@@ -152,7 +152,7 @@ p {
       rgb(61, 61, 168) 42%,
       rgb(39, 39, 122) 50%
     );
-    height: 200px;
+    height: 300px;
     position: sticky;
     top: 0;
     border: 0.2px solid rgb(52, 94, 209);
@@ -172,7 +172,7 @@ p {
     border-radius: 2rem;
     height: 400px;
   }
-}*/
+}
 @media only screen and (max-width: 768px) {
   .nav {
     background-color: rgb(2, 2, 116);
@@ -182,7 +182,7 @@ p {
       rgb(61, 61, 168) 42%,
       rgb(39, 39, 122) 50%
     );
-    height: 200px;
+    height: 350px;
     position: sticky;
     top: 0;
     border: 0.2px solid rgb(52, 94, 209);
@@ -213,7 +213,7 @@ p {
       rgba(61, 61, 168, 0.9) 42%,
       rgba(39, 39, 122, 0.9) 50%
     );
-    height: 350px;
+    height: 400px;
     position: sticky;
     top: 0;
     border: 0.2px solid rgba(52, 94, 209, 0.9);
