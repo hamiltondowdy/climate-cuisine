@@ -137,5 +137,5 @@ randomCity();
 // if the search button was clicked show the chosen city
 searchBtn.addEventListener("click", getCity);
 
-searchBtn.addEventListener("click",document)
+searchBtn.addEventListener("click",document.locatio)
 
