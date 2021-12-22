@@ -1,6 +1,6 @@
-var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
 var chosenCityTemp;
-var city = JSON.parse(window.localStorage.getItem("cityValue"));
+var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
+// var city = JSON.parse(window.localStorage.getItem("cityValue"));
 var historyContainer = document.getElementById("city-history");
 var weatherInfo = document.getElementById("weather-info");
 //get the name span by ID
@@ -21,17 +21,14 @@ weatherInfo.append(tempEl,humidityEl,descEl);
         for (var i = storedHistory.length -1 ;i>=0;i--){
             var liItems=document.createElement("li");
             var items=document.createElement("a");
+            items.setAttribute("class","historyAnc");
             items.setAttribute("data-search",storedHistory[i]);
             liItems.append(items);
             items.textContent=storedHistory[i];
             console.log(storedHistory);
             historyContainer.append(liItems);
-    
-    
-    
         }
     }
-    console.log("my city", city)
     intialSearch(); 
 // Array of drink IDs
 var coldDrinks = [11634, 17267, 178358, 13936];
@@ -125,7 +122,7 @@ var getMeal = function () {
   });
 };
 // get weather info function
-var getWaetherInfo = function () {
+var getWaetherInfo = function (city) {
     // get weather info function, to test the URl change the (+ city +) with any city name
     var apiUrl =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -175,13 +172,19 @@ var getWaetherInfo = function () {
     humidityEl.innerText = "Humidity: "+ humidity; 
     descEl.innerText = description; 
 }
-var historyClick = function(e){
-    if (!e.target.matches("#city-history")){
-        return;
-    }
-    nameEl.innerHTML="";
-    var clic = e.target;
-    var citNa = clic.getAttribute("data-search");
-    getWaetherInfo(citNa);
+var checkEvent = function(e){
+  nameEl.innerHTML="";
+  var clic = e.target;
+  var city = clic.getAttribute("data-search");
+  getWaetherInfo(city);
 }
-getWaetherInfo();
+var eventCheck = function(){
+  if(!checkEvent){
+    return;
+  }else{
+    var city = JSON.parse(window.localStorage.getItem("cityValue"));
+    getWaetherInfo(city);
+  }
+}
+eventCheck();
+historyContainer.addEventListener("click",checkEvent);
