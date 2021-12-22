@@ -145,8 +145,8 @@ var getWaetherInfo = function (city) {
         //   alert("error City not found");
         swal("error City not found",{
            buttons: {
-               concle:true,
-               confirm:true,
+               cancel:true,
+               confirm:false,
            },
         })
         }
@@ -154,7 +154,12 @@ var getWaetherInfo = function (city) {
       // if there is any network error
       .catch(function (error) {
         //alert the user // must change to a popup message element
-        alert("Unable to connect to the server");
+        swal("Unable to connect to the server",{
+          buttons: {
+              cancel:true,
+              confirm:true,
+          },
+        })
       });
   };
   //get weather information on the website 

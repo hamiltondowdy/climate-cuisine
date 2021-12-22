@@ -60,8 +60,8 @@ resultEl.append(nameEl,iconEl,tempEl,humidityEl,windEl, descEl);
         // alert the user to enster a valid city 
         swal("Error City not Found",{
             buttons: {
-                concle:true,
-                confirm:true,
+                cancel:true,
+                confirm:false,
             },
          })
     }
@@ -90,8 +90,8 @@ var getWaetherInfo = function (city) {
         // alert the user // must change to a popup message element
         swal("Error City not found",{
             buttons: {
-                concle:true,
-                confirm:true,
+                cancel:true,
+                confirm:false,
             },
          })
       }
@@ -101,8 +101,8 @@ var getWaetherInfo = function (city) {
       //alert the user // must change to a popup message element
       swal("error City not found",{
         buttons: {
-            concle:true,
-            confirm:true,
+            cancel:true,
+            confirm:false,
         },
      })
     });
@@ -147,20 +147,23 @@ var randomCity =function(){
     
 }
 
-var passCity =function(){
+var passCity = function(){
     var cityName = document.getElementById("cityname").value;
     localStorage.setItem("cityValue",JSON.stringify(cityName));
 }
 var redirect = function(){
+  setInterval(function(){
     window.location.href="./second-page.html"
-}
+  },500);
 
+}
 //callimng the randomCity function
 randomCity();
+
 //callimng the randomCity function
 // if the search button was clicked show the chosen city
 searchBtn.addEventListener("click", getCity);
 searchBtn.addEventListener("click",passCity);
-// searchBtn.addEventListener("click",redirect);
+searchBtn.addEventListener("click",redirect);
 
 
