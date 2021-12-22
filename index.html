@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Climate Cuisine</title>
+</head>
+<body>
+
+    
+    <header Class="nav">
+        <h1 class="header-title"><i class="fas fa-utensils"></i><i class="fa-solid fa-martini-glass"></i>
+            
+            Climate Cuisine<i class="fas fa-utensils"></i>
+        </h1>
+        <p class="appDescription">Find the perfect meal and drink combo to suit the day's weather!</p>
+           
+           
+    </header>
+    <main class="grid-x grid-margin-x">
+          <div class="cell medium-6 large-4">
+            <div class="card">
+                <h2 class="card-header">search for a city:</h2>
+                <form id="city-form" class="card-body">
+                    <lable class="form-lable" for="cityname">City Name</lable>
+                    <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input"/>
+                    <button type="submit" class="btn" id="searchBTn" >Search</button>
+                </form>
+            </div>
+        </div>
+        <div class ="cell medium-6 large-4 ">
+            <div class="card2 " id="result">
+                <!--print the search result-->
+            </div>
+        </div>
+    </main>
+ 
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
