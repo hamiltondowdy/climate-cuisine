@@ -2,6 +2,18 @@ var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
 var chosenCityTemp;
 var city = JSON.parse(window.localStorage.getItem("cityValue"));
 var historyContainer = document.getElementById("city-history");
+var weatherInfo = document.getElementById("weather-info");
+//get the name span by ID
+var nameEl =document.getElementById("city-name")
+var iconEl = document.createElement("img");
+// assign an SRC attribute to hold the icon URL
+iconEl.setAttribute("src","");
+//create an <p> elements to hold the weather information 
+var tempEl= document.createElement("p");
+var humidityEl= document.createElement("p");
+var descEl= document.createElement("p");
+// appending the dynamically created element
+weatherInfo.append(tempEl,humidityEl,descEl);
 
     // Function to get search history from local storage
     var intialSearch = function(){
@@ -9,6 +21,7 @@ var historyContainer = document.getElementById("city-history");
         for (var i = storedHistory.length -1 ;i>=0;i--){
             var liItems=document.createElement("li");
             var items=document.createElement("a");
+            items.setAttribute("data-search",storedHistory[i]);
             liItems.append(items);
             items.textContent=storedHistory[i];
             console.log(storedHistory);
@@ -111,17 +124,6 @@ var getMeal = function () {
     }
   });
 };
-//get the name span by ID
-var nameEl =document.getElementById("city-name")
-var iconEl = document.createElement("img");
-// assign an SRC attribute to hold the icon URL
-iconEl.setAttribute("src","");
-//create an <p> elements to hold the weather information 
-var tempEl= document.createElement("p");
-var humidityEl= document.createElement("p");
-var windEl= document.createElement("p");
-var descEl= document.createElement("p");
-// appending the dynamically created element
 // get weather info function
 var getWaetherInfo = function () {
     // get weather info function, to test the URl change the (+ city +) with any city name
@@ -143,7 +145,13 @@ var getWaetherInfo = function () {
           // if the city name was wrong
         } else {
           // alert the user // must change to a popup message element
-          alert("error City not found");
+        //   alert("error City not found");
+        swal("error City not found",{
+           buttons: {
+               concle:true,
+               confirm:true,
+           },
+        })
         }
       })
       // if there is any network error
@@ -161,11 +169,19 @@ var getWaetherInfo = function () {
     chosenCityTemp=data.main.temp;
     console.log (name,icon,chosenCityTemp,humidity,description);
     //write the weather infromation in each element 
-    nameEl.innerText = "Weather in " + name;
+    nameEl.innerText = name;
     iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
     tempEl.innerText = "Temp: "+ chosenCityTemp + "°F";
     humidityEl.innerText = "Humidity: "+ humidity; 
     descEl.innerText = description; 
 }
-
+var historyClick = function(e){
+    if (!e.target.matches("#city-history")){
+        return;
+    }
+    nameEl.innerHTML="";
+    var clic = e.target;
+    var citNa = clic.getAttribute("data-search");
+    getWaetherInfo(citNa);
+}
 getWaetherInfo();
