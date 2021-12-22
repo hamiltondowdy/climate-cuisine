@@ -22,6 +22,11 @@ body {
   top: 0;
   border: 0.2px solid rgba(52, 94, 209, 0.8);
 }
+
+.header {
+  z-index: 9999;
+}
+
 .header-title {
   font-size: 60px;
   font-stretch: extra-expanded;
