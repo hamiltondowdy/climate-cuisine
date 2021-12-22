@@ -144,7 +144,7 @@ randomCity();
 searchBtn.addEventListener("click", getCity);
 
 searchBtn.addEventListener("click", document);
-searchBtn.addEventListener(
-  "click",
-  nameEl.setAttribute("href", "./second-page.html")
-);
+/*searchBtn.addEventListener("click", function(event)) {
+  event.target.nameEl = document.createElement("a");
+  nameEl.setAttribute("href", "./second-page.html");
+}*/

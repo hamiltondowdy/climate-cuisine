@@ -42,15 +42,15 @@ h1 {
   display: flex;
 }
 .appDescription {
-  display: flex;
   font-size: 30px;
+  display: flex;
   font-stretch: extra-expanded;
   font-family: "Open Sans", sans-serif;
   font-family: "Staatliches", cursive;
   letter-spacing: 10px;
   text-shadow: 2px 2px green;
   justify-content: center;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255);
 }
 .card {
   margin: 125px 0 2px 175px;
@@ -130,7 +130,7 @@ h1 {
 }
 .city-name {
   display: flex;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255);
   font-size: 32px;
   padding: 4px 0px 2px 10px;
   margin: 2px 5px 5px 2px;
@@ -143,7 +143,40 @@ p {
   color: white;
   font-size: 18px;
 }
-/*@media only screen and (max-width: 1550px) {
+@media only screen and (max-width: 1400px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    height: 250px;
+    position: sticky;
+    top: 0;
+    border: 0.2px solid rgb(52, 94, 209);
+  }
+  .card {
+    margin: 0px 0 0px 0px;
+    width: 100%;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    display: flex;
+  }
+  .card2 {
+    display: flex;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    width: 100%;
+    margin: 0px 0 0 0px;
+    background-color: rgba(14, 109, 233, 0.9);
+    border-radius: 2rem;
+    height: 400px;
+  }
+
+
+}
+
+@media only screen and (max-width: 1024px) {
   .nav {
     background-color: rgb(2, 2, 116);
     background-image: linear-gradient(
@@ -172,37 +205,9 @@ p {
     border-radius: 2rem;
     height: 400px;
   }
-}*/
-/*@media only screen and (max-width: 1024px) {
-  .nav {
-    background-color: rgb(2, 2, 116);
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 94, 209) 0%,
-      rgb(61, 61, 168) 42%,
-      rgb(39, 39, 122) 50%
-    );
-    height: 300px;
-    position: sticky;
-    top: 0;
-    border: 0.2px solid rgb(52, 94, 209);
-  }
-  .card {
-    margin: 0px 0 0px 0px;
-    width: 100%;
-    border: 3px solid rgba(52, 94, 209, 0.9);
-    display: flex;
-  }
-  .card2 {
-    display: flex;
-    border: 3px solid rgba(52, 94, 209, 0.9);
-    width: 100%;
-    margin: 0px 0 0 0px;
-    background-color: rgba(14, 109, 233, 0.9);
-    border-radius: 2rem;
-    height: 400px;
-  }
-}*/
+
+
+}
 @media only screen and (max-width: 768px) {
   .nav {
     background-color: rgb(2, 2, 116);
@@ -243,7 +248,7 @@ p {
       rgba(61, 61, 168, 0.9) 42%,
       rgba(39, 39, 122, 0.9) 50%
     );
-    height: 400px;
+    height: 350px;
     position: sticky;
     top: 0;
     border: 0.2px solid rgba(52, 94, 209, 0.9);
@@ -272,129 +277,130 @@ p {
 /*  My code from 198 thru 325 */
 
 .topbar-responsive {
-  background: gray;
-  padding: 1rem 1.5rem;
-}
-
-.topbar-responsive .topbar-responsive-logo {
-  color: #fefefe;
-  vertical-align: middle;
-}
-
-.topbar-responsive .menu {
-  background: #2c3840;
-}
-
-.topbar-responsive .menu li:last-of-type {
-  margin-right: 0;
-}
-
-.topbar-responsive .menu a {
-  color: #fefefe;
-  transition: color 0.15s ease-in;
-}
-
-.topbar-responsive .menu a:hover {
-  color: #c6d1d8;
-}
-
-@media screen and (max-width: 39.9375em) {
+    background: gray;
+    padding: 1rem 1.5rem;
+  }
+  
+  .topbar-responsive .topbar-responsive-logo {
+    color: #fefefe;
+    vertical-align: middle;
+  }
+  
+  .topbar-responsive .menu {
+    background: #2c3840;
+  }
+  
+  .topbar-responsive .menu li:last-of-type {
+    margin-right: 0;
+  }
+  
   .topbar-responsive .menu a {
-    padding: 0.875rem 0;
+    color: #fefefe;
+    transition: color 0.15s ease-in;
   }
-}
-
-.topbar-responsive .menu .topbar-responsive-button {
-  color: #fefefe;
-  border-color: #fefefe;
-  border-radius: 5000px;
-  transition: color 0.15s ease-in, border-color 0.15s ease-in;
-}
-
-.topbar-responsive .menu .topbar-responsive-button:hover {
-  color: #c6d1d8;
-  border-color: #c6d1d8;
-}
-
-@media screen and (max-width: 39.9375em) {
+  
+  .topbar-responsive .menu a:hover {
+    color: #c6d1d8;
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive .menu a {
+      padding: 0.875rem 0;
+    }
+  }
+  
   .topbar-responsive .menu .topbar-responsive-button {
-    width: 100%;
-    margin: 0.875rem 0;
+    color: #fefefe;
+    border-color: #fefefe;
+    border-radius: 5000px;
+    transition: color 0.15s ease-in, border-color 0.15s ease-in;
   }
-}
+  
+  .topbar-responsive .menu .topbar-responsive-button:hover {
+    color: #c6d1d8;
+    border-color: #c6d1d8;
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive .menu .topbar-responsive-button {
+      width: 100%;
+      margin: 0.875rem 0;
+    }
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive {
+      padding: 0.75rem;
+    }
+    .topbar-responsive .top-bar-title {
+      position: relative;
+      width: 100%;
+    }
+    .topbar-responsive .top-bar-title span {
+      position: absolute;
+      right: 0;
+      border: 1px solid #fefefe;
+      border-radius: 5px;
+      padding: 0.25rem 0.45rem;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+    .topbar-responsive .top-bar-title span .menu-icon {
+      margin-bottom: 4px;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes slideDown {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive-links {
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-duration: 0.5s;
+              animation-duration: 0.5s;
+      width: 100%;
+      -webkit-animation: fadeIn 1s ease-in;
+              animation: fadeIn 1s ease-in;
+    }
+  }
 
-@media screen and (max-width: 39.9375em) {
-  .topbar-responsive {
-    padding: 0.75rem;
-  }
-  .topbar-responsive .top-bar-title {
-    position: relative;
-    width: 100%;
-  }
-  .topbar-responsive .top-bar-title span {
-    position: absolute;
-    right: 0;
-    border: 1px solid #fefefe;
-    border-radius: 5px;
-    padding: 0.25rem 0.45rem;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-  .topbar-responsive .top-bar-title span .menu-icon {
-    margin-bottom: 4px;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes slideDown {
-  0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-  100% {
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-  100% {
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-}
-
-@media screen and (max-width: 39.9375em) {
-  .topbar-responsive-links {
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    width: 100%;
-    -webkit-animation: fadeIn 1s ease-in;
-    animation: fadeIn 1s ease-in;
-  }
-}
