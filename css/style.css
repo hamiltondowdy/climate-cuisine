@@ -175,7 +175,6 @@ p {
     border: 0.2px solid rgb(52, 94, 209);
   }
   .card {
-    margin: 0px 0 0px 0px;
     width: 100%;
     border: 3px solid rgba(52, 94, 209, 0.8);
     display: flex;
