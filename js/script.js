@@ -167,3 +167,10 @@ searchBtn.addEventListener("click",passCity);
 searchBtn.addEventListener("click",redirect);
 
 
+
+
+<!-- My code 2 begin  -->
+
+
+<!-- My code 2 end  -->
+
