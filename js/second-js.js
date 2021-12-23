@@ -1,11 +1,8 @@
 var chosenCityTemp;
 var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
-var city = JSON.parse(window.localStorage.getItem("cityValue"));
 
 var mealBoxEl = document.querySelector("#meal-box");
 var drinkBoxEl = document.querySelector("#drink-box");
-
-
 
 var historyContainer = document.getElementById("city-history");
 var weatherInfo = document.getElementById("weather-info");
@@ -19,26 +16,26 @@ var tempEl= document.createElement("p");
 var humidityEl= document.createElement("p");
 var descEl= document.createElement("p");
 // appending the dynamically created element
-weatherInfo.appendChild(tempEl,humidityEl,descEl);
+weatherInfo.append(tempEl,humidityEl,descEl);
 
     // Function to get search history from local storage
     var intialSearch = function(){
-        var storedHistory = JSON.parse(window.localStorage.getItem("search-history")) || [];
-        for (var i = storedHistory.length -1 ;i>=0;i--){
-            var liItems=document.createElement("li");
-            var items=document.createElement("a");
-            items.setAttribute("class","historyAnc");
-            items.setAttribute("data-search",storedHistory[i]);
-            liItems.append(items);
-            items.textContent=storedHistory[i];
-            console.log(storedHistory);
-            historyContainer.append(liItems);
-        }
-    }
-    // intialSearch();
+      var storedHistory = JSON.parse(window.localStorage.getItem("search-history")) || [];
+      for (var i = storedHistory.length -1 ;i>=0;i--){
+          var liItems=document.createElement("li");
+          var items=document.createElement("a");
+          items.setAttribute("class","historyAnc");
+          items.setAttribute("data-search",storedHistory[i]);
+          liItems.append(items);
+          items.textContent=storedHistory[i];
+          console.log(storedHistory);
+          historyContainer.append(liItems);
+      }
+  }
+  intialSearch(); 
 
 // get weather info function
-var getWaetherInfo = function () {
+var getWaetherInfo = function (city) {
   // get weather info function, to test the URl change the (+ city +) with any city name
   var apiUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -92,24 +89,9 @@ var getWeather = function(data){
   tempEl.innerText = "Temp: "+ chosenCityTemp + "°F";
   humidityEl.innerText = "Humidity: "+ humidity; 
   descEl.innerText = description; 
+  getMealId();
+  getDrinkId();
 }
-var checkEvent = function(e){
-nameEl.innerHTML="";
-var clic = e.target;
-var city = clic.getAttribute("data-search");
-getWaetherInfo(city);
-}
-var eventCheck = function(){
-if(!checkEvent){
-  return;
-}else{
-  
-  getWaetherInfo(city);
-}
-}
-eventCheck();
-historyContainer.addEventListener("click",checkEvent);
-
 
 // Array of drink IDs
 var coldDrinks = [11634, 17267, 178358, 13936];
@@ -154,6 +136,7 @@ var getDrink = function () {
   
         response.json().then(function (data) {
           displayCocktailInfo(data);
+          console.log(data);
         });
       })
       .catch(function (err) {
@@ -162,16 +145,18 @@ var getDrink = function () {
   };
 
 var displayCocktailInfo = function(data) {
-  // add drink icon to drink section
+  
+  drinkBoxEl.innerHTML="";
   var drinkIconEl = document.createElement("img");
-  drinkIconEl.setAttribute("href", data.drinks[0].strDrinkThumb);
-  drinkIconEl.setAttribute("alt", "image of selected selected");
+  drinkIconEl.src= data.drinks[0].strDrinkThumb;
+  drinkIconEl.setAttribute("alt", "image of selected meal");
   drinkBoxEl.appendChild(drinkIconEl);
-
+ console.log(drinkIconEl);
   // add meal title
   var drinkTitleEl = document.createElement("h3");
   drinkTitleEl.textContent = data.drinks[0].strDrink; 
   drinkBoxEl.appendChild(drinkTitleEl);
+  
   
   // add meal ingredients
   var drinkIngListEl = document.createElement("ul");
@@ -286,7 +271,7 @@ var getMealId = function () {
     console.log("error on meal choice");
   }
   mealApiUrl = "https://themealdb.com/api/json/v1/1/lookup.php?i=" + chosenMeal;
-  // console.log(chosenMeal);
+  console.log(chosenMeal);
   getMeal();
 };
 
@@ -309,12 +294,16 @@ var getMeal = function () {
 
 
 var displayMealInfo = function(data) {
+  mealBoxEl.innerHTML="";
   // add meal icon to meal section
   var mealIconEl = document.createElement("img");
-  mealIconEl.setAttribute("href", data.meals[0].strMealThumb);
+  var picHolder = document.createElement("div");
+  mealIconEl.src= data.meals[0].strMealThumb;
   mealIconEl.setAttribute("alt", "image of selected meal");
-  mealBoxEl.appendChild(mealIconEl);
-
+  mealIconEl.setAttribute("class","meal-image")
+  picHolder.appendChild(mealIconEl);
+  mealBoxEl.appendChild(picHolder);
+console.log(mealIconEl);
   // add meal title
   var mealTitleEl = document.createElement("h3");
   mealTitleEl.textContent = data.meals[0].strMeal; 
@@ -433,4 +422,23 @@ var displayMealInfo = function(data) {
   // append items to div
   mealBoxEl.appendChild(mealInstructionsEl);
 };
+
+var checkEvent = function(e){
+  nameEl.innerHTML="";
+  var clic = e.target;
+  var city = clic.getAttribute("data-search");
+  getWaetherInfo(city);
+  }
+  var eventCheck = function(){
+  if(!checkEvent){
+    return;
+  }else{
+    var city = JSON.parse(window.localStorage.getItem("cityValue"));
+    getWaetherInfo(city);
+  }
+  }
+  eventCheck();
+  historyContainer.addEventListener("click",checkEvent);
+  historyContainer.addEventListener("click",getDrinkId);
+  historyContainer.addEventListener("click",getMealId);
 

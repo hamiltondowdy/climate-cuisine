@@ -21,57 +21,49 @@
   </header>
 
   <main class="grid-x grid-margin-x">
-    <div class="cell medium-3 large-3">
+    <div class=" cell small-2">
+      <div class="weather">
+
+        <h3 id=weather-forecast class="weather-header">Weather Forecast: <span id=city-name></span></h3>
+        <div id="weather-info"class ="weather-body"></div>
+
+        <!-- insert dynamically -->
+        </div>
+      </div>
+    </div>
+    <div class="cell small-4">
+      <div class="meal-sec">
+        <h3 class="card-header" id="drink-box">Drink Recommendation</h3>
+        <!-- insert dynamically -->
+        </div>
+      </div>
+    </div>
+    <div class="cell auto">
+      <div class="meal-sec">
+
+        
+        <h3 class="card-header" id="meal-box">Food Recommendation</h3>
+        
+        <!-- insert dynamically -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell small-1">
           <div class="container">
-          <div class="card">
-            <div class="header">
+          <div class="list">
+            <div class="list-header">
               <h3>Recent Searches <i class="fas fa-arrow-circle-down iconM"></i></h3>
             </div>
-            <div class="body">
-              <ul>
-                <li> New York</li>
-                <li> Austin</li>
-                <li> Atlanta</li>
-                <li> Boston</li>
-                <li> San Fransisco</li>
-                <li> Denver</li>
+            <div class="body-list">
+              <ul id="city-history">
               </ul>
             </div>
           </div>
-
         <!-- insert dynamically -->
       </div>
     </div>
-    <div class="cell medium-4 large-4">
-      <div class="card">
-        <h3 class="card-header" id="meal-box">Food Recommendation</h3>
-
-        
-
-        <!-- insert dynamically -->
-        </div>
-      </div>
-    </div>
-    <div class="cell medium-4 large-4">
-      <div class="card">
-
-        <h3 class="card-header" id="drink-box">Drink Recommendation</h3>
-
-        
-        <!-- insert dynamically -->
-        </div>
-      </div>
-    </div>
-    <div class="cell medium-3 large-3">
-      <div class="card">
-
-        <h3 id=weather-forecast class="card-header">Weather Forecast: <span id=city-name></span></h3>
-        <div id="weather-info"class ="wether2"></div>
-
-        <!-- insert dynamically -->
-        </div>
-      </div>
-    </div>
+    
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

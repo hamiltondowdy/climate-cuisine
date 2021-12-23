@@ -38,19 +38,6 @@ h1 {
   color: #fff;
   margin: 6px auto;
 }
-
-.card {
-  margin: 50px 50px 50px 50px;
-  width: 100%;
-  border: 3px solid rgb(52, 94, 209, 0.9);
-  display: flex;
-  border: 3px solid rgb(52, 94, 209, 0.8);
-
-  display: block;
-  border-radius: 10px;
-  text-align: center;
-}
-
 .appDescription {
   font-size: 20px;
   display: flex;
@@ -64,34 +51,31 @@ h1 {
   color: rgba(255, 255, 255);
 }
 
+/*search bar section*/
 .card {
   margin: 125px 0 2px 175px;
   width: 100%;
-  border: 3px solid rgba(14, 109, 233, 0.9);
+  border: 3px solid #2b58a7;
   display: flex;
   opacity: 0.9;
   border-radius: 2rem;
 }
-
 .card-header {
-  background-color: rgba(14, 109, 233, 0.9);
+  background-color: rgba(23, 78, 142, 0.9);
   color: #ffff;
   padding: 1%;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
   margin-top: 0;
 }
-
 .card-body {
   padding: 1%;
   background-color: rgba(255, 255, 255, 0.9);
   opacity: 0.9;
 }
-
 .form-lable {
   font-size: 1.8rem;
   margin: 5px;
 }
-
 .form-input {
   width: 100%;
   padding: 3%;
@@ -100,7 +84,6 @@ h1 {
   border: 2px solid rgb(54, 54, 54);
   border-radius: 1rem;
 }
-
 .btn {
   font-size: 1.3rem;
   padding: 6px 5px;
@@ -111,29 +94,8 @@ h1 {
   color: #fff;
   transform: translate(-1px, -1px);
 }
-
-.justify-space-between {
-  justify-content: space-between;
-}
-
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-12 {
-  flex: 0 0 100%;
-  flex-basis: 100px;
-  height: 100px;
-  margin: 5px;
-}
-
-.col-6 {
-  flex: 0 0 calc(100% * 6 / 12 -2);
-  float: right;
-  top: 0;
-}
-
+/*end of search bar section*/
+/* city name info*/
 .card2 {
   display: flex;
   border: 3px solid rgba(52, 94, 209, 0.9);
@@ -143,7 +105,6 @@ h1 {
   border-radius: 2rem;
   opacity: 0.9;
 }
-
 .city-name {
   display: flex;
   color: rgba(255, 255, 255);
@@ -155,76 +116,92 @@ h1 {
   white-space: nowrap;
 }
 
-
-img {
-  position: absolute;
-  top: 50px;
-  right: 550px;
-}
-
-
-
 p {
   color: white;
   font-size: 18px;
 }
-
-@media only screen and (max-width: 1400px) {}
-
-@media only screen and (max-width: 980px) {
-  .nav {
-    background-color: rgb(2, 2, 116);
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 94, 209) 0%,
-      rgb(61, 61, 168) 42%,
-      rgb(39, 39, 122) 50%
-    );
-    width: 100%;
-    float: none;
-    display: block;
-    text-align: center;
-    height: 175px;
-    position: sticky;
-  }
+/* end of city name info*/
+/*page 2 style*/ 
+/* history style*/
+.container{
+  padding: 21px;
+  position: absolute;
+  left:1px;
+  top:390px;
+}
+.list{
+  width: 300px;
+  height: 520px;
+  background-color: #1E2B32;
+  border-radius: 10px 10px;
+}
+.list-header{
+  border-radius: 10px 0px;
+  padding: 5px;
+  background-color: #2f3c45;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 1rem;
+}
+.weather {
+  width:116%;
+  padding :21px
+}
+.weather-header {
+  background-color: #2f3c45;
+  color: #ffff;
+  padding: 1%;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
+.weather-body{
+  padding: 1%;
+  margin-top:-8px;
+  background-color: #1E2B32;
 
-@media only screen and (max-width: 768px) {
-  .nav {
-    background-color: rgb(2, 2, 116);
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 94, 209) 0%,
-      rgb(61, 61, 168) 42%,
-      rgb(39, 39, 122) 50%
-    );
-    height: 200px;
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: center;
-    height: 175px;
-    position: sticky;
-    top: 0;
-    border: 0.2px solid rgb(52, 94, 209);
-  }
-  .card {
-    width: 100%;
-    border: 3px solid rgba(52, 94, 209, 0.9);
-    display: flex;
-  }
-  .card2 {
-    display: flex;
-    border: 3px solid rgba(52, 94, 209, 0.9);
-    width: 100%;
-    margin: 0px 0 0 0px;
-    background-color: rgba(14, 109, 233, 0.9);
-    border-radius: 2rem;
-    height: 400px;
-  }
 }
 
+.iconM{
+  font-size: 18px;
+  color: #2f89fc;
+  
+}
+.body-list li{
+  transition: 1s all;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  padding: 15px;
+  margin-left: -20px;
+  margin-top: 0px;
+  color: #fff;
+  list-style: none;
+  display: block;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+}
+li:hover{
+  transition: 1s all;
+  color: #2f89fc;
+  background-color: rgba(42, 56, 65, 0.82);
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  cursor: pointer;
+}
+.body-list> li{
+  float: left;
+}
+.meal-sec{
+  padding: 21px;
+
+}
+.meal-sec h3{
+  border-radius: 10px 0px;
+  padding: 5px;
+  background-color: #2A3942;
+  font-size: 18px;
+}
+
+/*history style ends*/
 @media only screen and (max-width: 1024px) {
   .nav {
     background-color: rgb(2, 2, 116);
@@ -254,7 +231,24 @@ p {
     height: 400px;
   }
 }
-  
+
+@media only screen and (max-width: 980px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    width: 100%;
+    float: none;
+    display: block;
+    text-align: center;
+    height: 175px;
+    position: sticky;
+  }
+}
 @media only screen and (max-width: 768px) {
   .nav {
     background-color: rgb(2, 2, 116);
@@ -264,12 +258,17 @@ p {
       rgb(61, 61, 168) 42%,
       rgb(39, 39, 122) 50%
     );
-    height: 325px;
+    height: 200px;
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 175px;
+    position: sticky;
     top: 0;
     border: 0.2px solid rgb(52, 94, 209);
   }
   .card {
-    margin: 0px 0 0px 0px;
     width: 100%;
     border: 3px solid rgba(52, 94, 209, 0.9);
     display: flex;
@@ -282,10 +281,8 @@ p {
     background-color: rgba(14, 109, 233, 0.9);
     border-radius: 2rem;
     height: 400px;
-
   }
 }
-
 @media only screen and (max-width: 600px) {
   .nav {
     background-color: rgb(2, 2, 116);
@@ -323,83 +320,3 @@ p {
     border-radius: 2rem;
   }
 }
-  
-/*  Court code 2 begins */
-
-.container{
-  padding: 21px;
-}
-
-.card{
-  width: 300px;
-  height: 520px;
-  background-color: #1E2B32;
-  border-radius: 10px 10px;
-}
-
-.header{
-  border-radius: 10px 10px 0px 0px;
-  padding: 5px;
-  background-color: #2A3942;
-}
-
-h3{
-  color: #FFFFFF;
-  font-family: 'Roboto', sans-serif;
-  margin-left: 1rem;
-}
-
-.iconM{
-  font-size: 18px;
-  margin-left: 170px;
-  color: #2f89fc;
-}
-
-.icon{
-  margin-right: 8px;
-}
-
-.body li{
-  transition: 1s all;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  padding: 15px;
-  margin-left: -20px;
-  margin-top: 0px;
-  color: #fff;
-  list-style: none;
-  display: block;
-  border-top-right-radius: 10px 10px;
-  border-bottom-right-radius: 10px 10px;
-}
-
-li:hover{
-  transition: 1s all;
-  color: #2f89fc;
-  background-color: rgba(42, 56, 65, 0.82);
-  border-top-right-radius: 10px 10px;
-  border-bottom-right-radius: 10px 10px;
-  cursor: pointer;
-}
-
-.body > li{
-  float: left;
-}
-
-.body li ul{
-  background: #1E2B32;
-  margin-left: 280px;
-  margin-top: -38px;
-  display: none;
-  position: absolute;
-  border-top-right-radius: 15px 15px;
-  border-bottom-right-radius: 15px 15px;
-}
-
-.body li:hover > ul{
-  display: block;
-  cursor: pointer;
-}
-
-/*  Court code 2 ends */
-  
