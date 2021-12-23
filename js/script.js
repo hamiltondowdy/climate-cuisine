@@ -75,7 +75,7 @@ function appendToHistory(city) {
             },
          })
     }
-}
+}}
 
 // function to get the city name w
 var getCity = function (event) {
@@ -205,10 +205,4 @@ searchBtn.addEventListener("click",passCity);
 searchBtn.addEventListener("click",redirect);
 
 
-
-
-<!-- My code 2 begin  -->
-
 searchBtn.addEventListener("click", document);
-
-<!-- My code 2 end  -->

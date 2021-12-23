@@ -1,6 +1,6 @@
 var chosenCityTemp;
 var apiKey ="d092e4c696e2cfb7a6d26f9f58875d39";
-
+var city = JSON.parse(window.localStorage.getItem("cityValue"));
 
 var mealBoxEl = document.querySelector("#meal-box");
 var drinkBoxEl = document.querySelector("#drink-box");
@@ -19,7 +19,7 @@ var tempEl= document.createElement("p");
 var humidityEl= document.createElement("p");
 var descEl= document.createElement("p");
 // appending the dynamically created element
-weatherInfo.append(tempEl,humidityEl,descEl);
+weatherInfo.appendChild(tempEl,humidityEl,descEl);
 
     // Function to get search history from local storage
     var intialSearch = function(){
@@ -35,7 +35,82 @@ weatherInfo.append(tempEl,humidityEl,descEl);
             historyContainer.append(liItems);
         }
     }
-    intialSearch();
+    // intialSearch();
+
+// get weather info function
+var getWaetherInfo = function () {
+  // get weather info function, to test the URl change the (+ city +) with any city name
+  var apiUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    city +
+    "&units=imperial&appid=" +
+    apiKey;
+  //make a request to the url
+  fetch(apiUrl)
+    .then(function (response) {
+      // if the response is okay
+      if (response.ok) {
+        //get the data
+        response.json().then(function (data) {
+          // run dsiplay weathr function
+          getWeather(data);
+        });
+        // if the city name was wrong
+      } else {
+        // alert the user // must change to a popup message element
+      //   alert("error City not found");
+      swal("error City not found",{
+         buttons: {
+             cancel:true,
+             confirm:false,
+         },
+      })
+      }
+    })
+    // if there is any network error
+    .catch(function (error) {
+      //alert the user // must change to a popup message element
+      swal("Unable to connect to the server",{
+        buttons: {
+            cancel:true,
+            confirm:true,
+        },
+      })
+    });
+};
+//get weather information on the website 
+var getWeather = function(data){
+  //define variables for the weather data
+  var {name} = data;
+  var {icon,description}=data.weather[0];
+  var {temp,humidity}=data.main;
+  chosenCityTemp=data.main.temp;
+  console.log (name,icon,chosenCityTemp,humidity,description);
+  //write the weather infromation in each element 
+  nameEl.innerText = name;
+  iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+  tempEl.innerText = "Temp: "+ chosenCityTemp + "°F";
+  humidityEl.innerText = "Humidity: "+ humidity; 
+  descEl.innerText = description; 
+}
+var checkEvent = function(e){
+nameEl.innerHTML="";
+var clic = e.target;
+var city = clic.getAttribute("data-search");
+getWaetherInfo(city);
+}
+var eventCheck = function(){
+if(!checkEvent){
+  return;
+}else{
+  
+  getWaetherInfo(city);
+}
+}
+eventCheck();
+historyContainer.addEventListener("click",checkEvent);
+
+
 // Array of drink IDs
 var coldDrinks = [11634, 17267, 178358, 13936];
 var coolDrinks = [14282, 16987, 17239, 17255];
@@ -230,78 +305,7 @@ var getMeal = function () {
   });
 };
 
-// get weather info function
-var getWaetherInfo = function (city) {
-    // get weather info function, to test the URl change the (+ city +) with any city name
-    var apiUrl =
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
-      city +
-      "&units=imperial&appid=" +
-      apiKey;
-    //make a request to the url
-    fetch(apiUrl)
-      .then(function (response) {
-        // if the response is okay
-        if (response.ok) {
-          //get the data
-          response.json().then(function (data) {
-            // run dsiplay weathr function
-            getWeather(data);
-          });
-          // if the city name was wrong
-        } else {
-          // alert the user // must change to a popup message element
-        //   alert("error City not found");
-        swal("error City not found",{
-           buttons: {
-               cancel:true,
-               confirm:false,
-           },
-        })
-        }
-      })
-      // if there is any network error
-      .catch(function (error) {
-        //alert the user // must change to a popup message element
-        swal("Unable to connect to the server",{
-          buttons: {
-              cancel:true,
-              confirm:true,
-          },
-        })
-      });
-  };
-  //get weather information on the website 
-  var getWeather = function(data){
-    //define variables for the weather data
-    var {name} = data;
-    var {icon,description}=data.weather[0];
-    var {temp,humidity}=data.main;
-    chosenCityTemp=data.main.temp;
-    console.log (name,icon,chosenCityTemp,humidity,description);
-    //write the weather infromation in each element 
-    nameEl.innerText = name;
-    iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
-    tempEl.innerText = "Temp: "+ chosenCityTemp + "°F";
-    humidityEl.innerText = "Humidity: "+ humidity; 
-    descEl.innerText = description; 
-}
-var checkEvent = function(e){
-  nameEl.innerHTML="";
-  var clic = e.target;
-  var city = clic.getAttribute("data-search");
-  getWaetherInfo(city);
-}
-var eventCheck = function(){
-  if(!checkEvent){
-    return;
-  }else{
-    var city = JSON.parse(window.localStorage.getItem("cityValue"));
-    getWaetherInfo(city);
-  }
-}
-eventCheck();
-historyContainer.addEventListener("click",checkEvent);
+
 
 
 var displayMealInfo = function(data) {
