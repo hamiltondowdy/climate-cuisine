@@ -8,21 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d2248f9e3e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css"/>
     <title>Climate Cuisine</title>
 </head>
 <body>
   <header Class="nav">
-    <h1 class="header-title"><i class="fas fa-utensils"></i><i class="fa-solid fa-martini-glass"></i>
+    <h1 class="header-title"><i class="fas fa-utensils"></i>
       Climate Cuisine<i class="fas fa-utensils"></i>
+      <p class="appDescription">Find the perfect meal and drink combo to suit the day's weather!</p>
     </h1>
-    <p class="appDescription">Find the perfect meal and drink combo to suit the day's weather!</p>
   </header>
 
   <main class="grid-x grid-margin-x">
-    <div class="cell medium-2 large-2">
+    <div class="cell medium-3 large-3">
       <div class="card">
+
         <h3  class="card-header">Drop Down Menu</h3>
                 <nav class="top-bar topbar-responsive">
             <div class="top-bar-title">
@@ -40,34 +41,63 @@
                 </div>
             </div>
             </nav>
+
+
+        <h4 class="card-header">Drop Down Menu</h4>
+
+        <h3 id="city-history" class="card-header">Drop Down Menu</h3>
+
+
         <!-- insert dynamically -->
       </div>
     </div>
-    <div class="cell medium-5 large-5">
+    <div class="cell medium-4 large-4">
       <div class="card">
-        <h3 class="card-header">Food Recomdation</h3>
+        <h3 class="card-header" id="meal-box">Food Recommendation</h3>
+
+        
+
         <!-- insert dynamically -->
         </div>
       </div>
     </div>
-    <div class="cell medium-5 large-5">
+    <div class="cell medium-4 large-4">
       <div class="card">
-        <h3 class="card-header">Drink Recomdation</h3>
+
+        <h3 class="card-header" id="drink-box">Drink Recommendation</h3>
+
+        
         <!-- insert dynamically -->
         </div>
       </div>
     </div>
-    <div class="cell medium-2 large-2">
+    <div class="cell medium-3 large-3">
       <div class="card">
+
         <h3 id=weather-forecast class="card-header">Weather Forecast: <span id=city-name></span></h3>
         <div id="weather-info"class ="wether2"></div>
+
+        <h4 class="card-header">Weather Forecast</h4>
+
+        <h3 id=weather-forecast class="card-header">Weather Forecast:<span id=city-name></span></h3>
+
+
         <!-- insert dynamically -->
         </div>
       </div>
     </div>
   </main>
+
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/second-js.js"></script>
+  
+
+
+  
+  <script src="./js/script.js"></script>
+
+  <script src="./js/second-js.js"></script>
+
+
 </body>
 
 </html>
