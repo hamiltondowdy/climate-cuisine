@@ -103,7 +103,7 @@ var getWeather = function (data) {
   nameEl.innerText = "Weather in " + name;
   iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
   tempEl.innerText = "Temp: " + temp + "°F";
-  humidityEl.innerText = "Humidity: " + humidity;
+  humidityEl.innerText = "Humidity: " + humidity + "%";
   descEl.innerText = description;
 };
 //display random cities on the first HTML page
@@ -144,7 +144,3 @@ randomCity();
 searchBtn.addEventListener("click", getCity);
 
 searchBtn.addEventListener("click", document);
-/*searchBtn.addEventListener("click", function(event)) {
-  event.target.nameEl = document.createElement("a");
-  nameEl.setAttribute("href", "./second-page.html");
-}*/
