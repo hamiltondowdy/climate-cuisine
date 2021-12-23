@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.nav {
+  background-color: rgba(2, 2, 116, 0.9);
+  background-image: linear-gradient(
+    45deg,
+    rgba(52, 94, 209, 0.9) 0%,
+    rgba(61, 61, 168, 0.9) 42%,
+    rgba(39, 39, 122, 0.9) 50%
+  );
+  height: 100px;
+  height: 150px;
+  top: 0;
+  border: 0.2px solid rgba(52, 94, 209, 0.9);
+}
+
+
+.header-title {
+  font-stretch: extra-expanded;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 10px;
+  text-shadow: 2px 2px green;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin: 6px auto;
+}
+.appDescription {
+  font-size: 20px;
+  display: flex;
+  font-stretch: extra-expanded;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 10px;
+  text-shadow: 2px 2px green;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255, 255, 255);
+}
+
+/*search bar section*/
+.card {
+  margin: 125px 0 2px 175px;
+  width: 100%;
+  border: 3px solid #2b58a7;
+  display: flex;
+  opacity: 0.9;
+  border-radius: 2rem;
+}
+.card-header {
+  background-color: rgba(23, 78, 142, 0.9);
+  color: #ffff;
+  padding: 1%;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  margin-top: 0;
+}
+.card-body {
+  padding: 1%;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+}
+.form-lable {
+  font-size: 1.8rem;
+  margin: 5px;
+}
+.form-input {
+  width: 100%;
+  padding: 3%;
+  margin: 5px 0;
+  font-size: 1.2rem;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 1rem;
+}
+.btn {
+  font-size: 1.3rem;
+  padding: 6px 5px;
+  display: block;
+  margin: 5px 0;
+  border-radius: 1rem;
+  background-color: rgba(14, 109, 233, 0.9);
+  color: #fff;
+  transform: translate(-1px, -1px);
+}
+/*end of search bar section*/
+/* city name info*/
+.card2 {
+  display: flex;
+  border: 3px solid rgba(52, 94, 209, 0.9);
+  width: 100%;
+  margin: 125px 0 0 300px;
+  background-color: rgba(14, 109, 233, 0.9);
+  border-radius: 2rem;
+  opacity: 0.9;
+}
+.city-name {
+  display: flex;
+  color: rgba(255, 255, 255);
+  font-size: 32px;
+  padding: 4px 0px 2px 10px;
+  margin: 2px 5px 5px 2px;
+  position: relative;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+p {
+  color: white;
+  font-size: 18px;
+}
+/* end of city name info*/
+/*page 2 style*/ 
+/* history style*/
+.container{
+  padding: 21px;
+  position: absolute;
+  left:1px;
+  top:390px;
+}
+.list{
+  width: 300px;
+  height: 520px;
+  background-color: #1E2B32;
+  border-radius: 10px 10px;
+}
+.list-header{
+  border-radius: 10px 0px;
+  padding: 5px;
+  background-color: #2f3c45;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 1rem;
+}
+.weather {
+  width:116%;
+  padding :21px
+}
+.weather-header {
+  background-color: #2f3c45;
+  color: #ffff;
+  padding: 1%;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.weather-body{
+  padding: 1%;
+  margin-top:-8px;
+  background-color: #1E2B32;
+
+}
+
+.iconM{
+  font-size: 18px;
+  color: #2f89fc;
+  
+}
+.body-list li{
+  transition: 1s all;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  padding: 15px;
+  margin-left: -20px;
+  margin-top: 0px;
+  color: #fff;
+  list-style: none;
+  display: block;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+}
+li:hover{
+  transition: 1s all;
+  color: #2f89fc;
+  background-color: rgba(42, 56, 65, 0.82);
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  cursor: pointer;
+}
+.body-list> li{
+  float: left;
+}
+.meal-sec{
+  padding: 21px;
+
+}
+.meal-sec h3{
+  border-radius: 10px 0px;
+  padding: 5px;
+  background-color: #2A3942;
+  font-size: 18px;
+}
+
+/*history style ends*/
+@media only screen and (max-width: 1024px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    height: 200px;
+    top: 0;
+    border: 0.2px solid rgb(52, 94, 209);
+  }
+  .card {
+    margin: 0px 0 0px 0px;
+    width: 100%;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    display: flex;
+  }
+  .card2 {
+    display: flex;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    width: 100%;
+    margin: 0px 0 0 0px;
+    background-color: rgba(14, 109, 233, 0.9);
+    border-radius: 2rem;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    width: 100%;
+    float: none;
+    display: block;
+    text-align: center;
+    height: 175px;
+    position: sticky;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgb(52, 94, 209) 0%,
+      rgb(61, 61, 168) 42%,
+      rgb(39, 39, 122) 50%
+    );
+    height: 200px;
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 175px;
+    position: sticky;
+    top: 0;
+    border: 0.2px solid rgb(52, 94, 209);
+  }
+  .card {
+    width: 100%;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    display: flex;
+  }
+  .card2 {
+    display: flex;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    width: 100%;
+    margin: 0px 0 0 0px;
+    background-color: rgba(14, 109, 233, 0.9);
+    border-radius: 2rem;
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .nav {
+    background-color: rgb(2, 2, 116);
+    background-image: linear-gradient(
+      45deg,
+      rgba(52, 94, 209, 0.9) 0%,
+      rgba(61, 61, 168, 0.9) 42%,
+      rgba(39, 39, 122, 0.9) 50%
+    );
+    height: 350px;
+    top: 0;
+    border: 0.2px solid rgba(52, 94, 209, 0.9);
+    line-height: 20px;
+    width: 100%;
+    float: none; 
+    height: 150px;
+    position: sticky;
+    top: 0;
+    border: 0.2px solid rgba(52, 94, 209, 0.8);
+
+    display: block;
+  }
+  .card {
+    margin: 0px 0 0px 0px;
+    width: 100%;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    display: flex;
+  }
+  .card2 {
+    display: flex;
+    border: 3px solid rgba(52, 94, 209, 0.9);
+    width: 100%;
+    margin: 0px 0 0 0px;
+    background-color: rgba(14, 109, 233, 0.9);
+    border-radius: 2rem;
+  }
+}

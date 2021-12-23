@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d2248f9e3e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Climate Cuisine</title>
+</head>
+<body>
+  <header Class="nav">
+    <h1 class="header-title"><i class="fas fa-utensils"></i>
+      Climate Cuisine<i class="fas fa-utensils"></i>
+      <p class="appDescription">Find the perfect meal and drink combo to suit the day's weather!</p>
+    </h1>
+  </header>
+
+  <main class="grid-x grid-margin-x">
+    <div class=" cell small-2">
+      <div class="weather">
+
+        <h3 id=weather-forecast class="weather-header">Weather Forecast: <span id=city-name></span></h3>
+        <div id="weather-info"class ="weather-body"></div>
+
+        <!-- insert dynamically -->
+        </div>
+      </div>
+    </div>
+    <div class="cell small-4">
+      <div class="meal-sec">
+        <h3 class="card-header" id="drink-box">Drink Recommendation</h3>
+        <!-- insert dynamically -->
+        </div>
+      </div>
+    </div>
+    <div class="cell auto">
+      <div class="meal-sec">
+
+        
+        <h3 class="card-header" id="meal-box">Food Recommendation</h3>
+        
+        <!-- insert dynamically -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell small-1">
+          <div class="container">
+          <div class="list">
+            <div class="list-header">
+              <h3>Recent Searches <i class="fas fa-arrow-circle-down iconM"></i></h3>
+            </div>
+            <div class="body-list">
+              <ul id="city-history">
+              </ul>
+            </div>
+          </div>
+        <!-- insert dynamically -->
+      </div>
+    </div>
+    
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/second-js.js"></script>
+
+</body>
+
+</html>
