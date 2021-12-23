@@ -24,9 +24,29 @@
     <div class="cell medium-3 large-3">
       <div class="card">
 
+        <h3  class="card-header">Drop Down Menu</h3>
+                <nav class="top-bar topbar-responsive">
+            <div class="top-bar-title">
+                <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
+                <button class="menu-icon" type="button" data-toggle></button>
+                </span>
+                <a class="topbar-responsive-logo" href="#"><strong>Searched City List
+        
+                </strong></a>
+            </div>
+            <div id="topbar-responsive" class="topbar-responsive-links">
+                <div class="top-bar-right">
+                <ul id="city-history" class="menu simple vertical medium-horizontal">
+                </ul>
+                </div>
+            </div>
+            </nav>
+
+
         <h4 class="card-header">Drop Down Menu</h4>
 
         <h3 id="city-history" class="card-header">Drop Down Menu</h3>
+
 
         <!-- insert dynamically -->
       </div>
@@ -54,9 +74,13 @@
     <div class="cell medium-3 large-3">
       <div class="card">
 
+        <h3 id=weather-forecast class="card-header">Weather Forecast: <span id=city-name></span></h3>
+        <div id="weather-info"class ="wether2"></div>
+
         <h4 class="card-header">Weather Forecast</h4>
 
         <h3 id=weather-forecast class="card-header">Weather Forecast:<span id=city-name></span></h3>
+
 
         <!-- insert dynamically -->
         </div>
@@ -64,10 +88,15 @@
     </div>
   </main>
 
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+
+
   
   <script src="./js/script.js"></script>
 
   <script src="./js/second-js.js"></script>
+
 
 </body>
 

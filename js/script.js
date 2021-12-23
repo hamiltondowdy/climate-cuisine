@@ -15,7 +15,7 @@ var searchBtn =document.getElementById("searchBTn");
 //6- create a history container 
 var historyContainer =  document.getElementById("city-history");
 // creating Element dynamically for weather information 
-//1- create an <h3> element to hold the city name
+//1- create an <a> element to hold the city name
 var nameEl =document.createElement("a")
 // give the <h3> element a style 
 nameEl.setAttribute("class","city-name");
@@ -31,7 +31,6 @@ var windEl= document.createElement("p");
 var descEl= document.createElement("p");
 // appending the dynamically created element
 resultEl.append(nameEl,iconEl,tempEl,humidityEl,windEl, descEl);
-
 
      // Function to update history in local storage then updates displayed history.
      function appendToHistory(city) {
@@ -55,11 +54,16 @@ resultEl.append(nameEl,iconEl,tempEl,humidityEl,windEl, descEl);
         //run the get weather function 
         getWaetherInfo(cityName);
         //clear the input filed 
-        cityInputEl.value="";
+        // cityInputEl.value="";
         // if there is no input for the user 
     }else{
         // alert the user to enster a valid city 
-        alert("please enter a valid city")
+        swal("Error City not Found",{
+            buttons: {
+                cancel:true,
+                confirm:false,
+            },
+         })
     }
 }
 // get weather info function
@@ -78,18 +82,29 @@ var getWaetherInfo = function (city) {
         //get the data
         response.json().then(function (data) {
           // run dsiplay weathr function
+          appendToHistory(city);
           getWeather(data, city);
         });
         // if the city name was wrong
       } else {
         // alert the user // must change to a popup message element
-        alert("error City not found");
+        swal("Error City not found",{
+            buttons: {
+                cancel:true,
+                confirm:false,
+            },
+         })
       }
     })
     // if there is any network error
     .catch(function (error) {
       //alert the user // must change to a popup message element
-      alert("Unable to connect to the server");
+      swal("error City not found",{
+        buttons: {
+            cancel:true,
+            confirm:false,
+        },
+     })
     });
 };
 
@@ -131,11 +146,24 @@ var randomCity =function(){
     }
     
 }
+
+var passCity = function(){
+    var cityName = document.getElementById("cityname").value;
+    localStorage.setItem("cityValue",JSON.stringify(cityName));
+}
+var redirect = function(){
+  setInterval(function(){
+    window.location.href="./second-page.html"
+  },500);
+
+}
 //callimng the randomCity function
 randomCity();
+
 //callimng the randomCity function
 // if the search button was clicked show the chosen city
 searchBtn.addEventListener("click", getCity);
+searchBtn.addEventListener("click",passCity);
+searchBtn.addEventListener("click",redirect);
 
-searchBtn.addEventListener("click",document)
 
