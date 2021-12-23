@@ -139,3 +139,10 @@ searchBtn.addEventListener("click", getCity);
 
 searchBtn.addEventListener("click",document)
 
+
+
+<!-- My code 2 begin  -->
+
+
+<!-- My code 2 end  -->
+
