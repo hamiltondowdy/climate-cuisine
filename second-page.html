@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,52 +20,42 @@
       <p class="appDescription">Find the perfect meal and drink combo to suit the day's weather!</p>
     </h1>
   </header>
-
   <main class="grid-x grid-margin-x">
-    <div class=" cell small-2">
-      <div class="weather">
-
-        <h3 id=weather-forecast class="weather-header">Weather Forecast: <span id=city-name></span></h3>
-        <div id="weather-info"class ="weather-body"></div>
-
-        <!-- insert dynamically -->
-        </div>
+    <div class="weather">
+      <h3 id=weather-forecast class="weather-header">Weather Forecast: <span id=city-name></span></h3>
+      <div id="weather-info"class ="weather-body">
+      <!-- insert dynamically-->
       </div>
-    </div>
-    <div class="cell small-4">
-      <div class="meal-sec">
-        <h3 class="card-header" id="drink-box">Drink Recommendation</h3>
-        <!-- insert dynamically -->
-        </div>
+    <div class="cell small-6 medium-2 large-1 ">
+      <div class="container">
+        <div class="list">
+      <div class="list-header">
+        <h3>Recent Searches <i class="fas fa-arrow-circle-down iconM"></i></h3>
       </div>
-    </div>
-    <div class="cell auto">
-      <div class="meal-sec">
-
-        
-        <h3 class="card-header" id="meal-box">Food Recommendation</h3>
-        
-        <!-- insert dynamically -->
-        </div>
+      <div class="body-list">
+        <ul id="city-history">
+        </ul>
       </div>
-    </div>
-    
-    <div class="cell small-1">
-          <div class="container">
-          <div class="list">
-            <div class="list-header">
-              <h3>Recent Searches <i class="fas fa-arrow-circle-down iconM"></i></h3>
-            </div>
-            <div class="body-list">
-              <ul id="city-history">
-              </ul>
-            </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="cell small-10 medium-6 large-4" >
+        <div class="meal-sec">
+          <h3 class="card-header" id="meal-box">Food Recommendation</h3>
+          <!-- insert dynamically -->
           </div>
-        <!-- insert dynamically -->
       </div>
-    </div>
-    
-  </main>
+      <div class="cell small-10 medium-6 large-4">
+        <div class="meal-sec">
+          <h3 class="card-header" id="drink-box">Drink Recommendation</h3>
+          <!--insert dynamically -->
+          </div>
+      </div>
+      
+
+    </main>
+
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/second-js.js"></script>

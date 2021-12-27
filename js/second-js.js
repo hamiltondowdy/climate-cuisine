@@ -148,6 +148,7 @@ var displayCocktailInfo = function(data) {
   
   drinkBoxEl.innerHTML="";
   var drinkIconEl = document.createElement("img");
+  drinkIconEl.setAttribute("class","image");
   drinkIconEl.src= data.drinks[0].strDrinkThumb;
   drinkIconEl.setAttribute("alt", "image of selected meal");
   drinkBoxEl.appendChild(drinkIconEl);
@@ -240,9 +241,13 @@ var displayCocktailInfo = function(data) {
   }
   
   // add meal instructions
-  var drinkInstructionsEl = document.createElement("p")
+  var drinkCon =document.createElement("div");
+  drinkCon.setAttribute("class","instructions");
+  var drinkInstructionsEl = document.createElement("p");
+  
   drinkInstructionsEl.textContent = data.drinks[0].strInstructions; 
-  drinkBoxEl.appendChild(drinkInstructionsEl);
+  drinkCon.append(drinkInstructionsEl)
+  drinkBoxEl.appendChild(drinkCon);
 };  
 
 // Array of meal IDs for MealDB API
